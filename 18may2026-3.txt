@@ -1,0 +1,46 @@
+-- Start Transaction
+START TRANSACTION;
+
+-- Create Table
+CREATE TABLE emp (
+    id INT
+);
+
+-- Insert first record
+INSERT INTO emp VALUES (101);
+
+-- Display table
+SELECT * FROM emp;
+
+-- Create Savepoint
+SAVEPOINT time15;
+
+-- Insert second record
+INSERT INTO emp VALUES (102);
+
+-- Create another Savepoint
+SAVEPOINT time16;
+
+-- Display records
+SELECT * FROM emp;
+
+-- Insert third record
+INSERT INTO emp VALUES (103);
+
+-- Create Savepoint
+SAVEPOINT time17;
+
+-- Rollback to time17
+ROLLBACK TO time17;
+
+-- Insert fourth record
+INSERT INTO emp VALUES (104);
+
+-- Create Savepoint
+SAVEPOINT time18;
+
+-- Rollback again to time17
+ROLLBACK TO time17;
+
+-- Display final records
+SELECT * FROM emp;
