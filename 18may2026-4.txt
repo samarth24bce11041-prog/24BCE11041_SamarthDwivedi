@@ -1,0 +1,35 @@
+-- Show Databases
+SHOW DATABASES;
+
+-- Use Database
+USE VITBHOPAL;
+
+-- Show Tables
+SHOW TABLES FROM VITBHOPAL;
+
+-- Display CSE Table
+SELECT * FROM CSE;
+
+-- Equal To Operator (=)
+SELECT * FROM CSE
+WHERE marks = 95;
+
+-- Greater Than Operator (>)
+SELECT * FROM CSE
+WHERE marks > 85;
+
+-- Less Than Operator (<)
+SELECT * FROM CSE
+WHERE marks < 90;
+
+-- Greater Than or Equal To Operator (>=)
+SELECT * FROM CSE
+WHERE marks >= 88;
+
+-- Less Than or Equal To Operator (<=)
+SELECT * FROM CSE
+WHERE marks <= 80;
+
+-- Not Equal To Operator (!=)
+SELECT * FROM CSE
+WHERE marks != 92;
