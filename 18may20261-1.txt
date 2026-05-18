@@ -1,0 +1,69 @@
+-- Show all databases
+SHOW DATABASES;
+
+-- Create database
+CREATE DATABASE vitcampus;
+
+-- Use database
+USE vitcampus;
+
+-- Create table
+CREATE TABLE cse(
+    sid INT,
+    sname VARCHAR(50),
+    smarks INT,
+    sdept VARCHAR(20),
+    scountry VARCHAR(30)
+);
+
+-- Show tables
+SHOW TABLES;
+
+-- Describe table
+DESC cse;
+
+-- Insert records
+INSERT INTO cse VALUES
+(201,'Arjun',91,'CSE','India'),
+(202,'Neha',87,'ECE','Dubai'),
+(203,'Rohit',78,'MECH','USA'),
+(204,'Sneha',95,'IT','Canada'),
+(205,'Vikas',82,'EEE','Australia');
+
+-- Display all records
+SELECT * FROM cse;
+
+-- Add new columns
+ALTER TABLE cse
+ADD(
+    sphn BIGINT,
+    sphn2 BIGINT
+);
+
+-- Check updated structure
+DESC cse;
+
+-- Insert new row with phone numbers
+INSERT INTO cse VALUES
+(206,'Semi',95,'CSE','SriLanka',9876543210,9876543211);
+
+-- Display table
+SELECT * FROM cse;
+
+-- Drop column sphn2
+ALTER TABLE cse
+DROP COLUMN sphn2;
+
+-- Add new column with default value
+ALTER TABLE cse
+ADD sCountry VARCHAR(30) DEFAULT 'INDIA';
+
+-- Rename column
+ALTER TABLE cse
+RENAME COLUMN sCountry TO sLocation;
+
+-- Final structure
+DESC cse;
+
+-- Final data
+SELECT * FROM cse;
