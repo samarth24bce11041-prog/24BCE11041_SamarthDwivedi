@@ -1,0 +1,59 @@
+-- Display all records from CSE
+SELECT * FROM CSE;
+
+-- Drop CSE table
+DROP TABLE CSE;
+
+-- Describe CSE table
+DESC CSE;
+
+-- Show all tables from your database
+SHOW TABLES FROM VITBHOPAL;
+
+-- Delete all records from EEE table
+DELETE FROM EEE;
+
+-- Display all records from EEE
+SELECT * FROM EEE;
+
+-- Rename EEE table to ECE
+RENAME TABLE EEE TO ECE;
+
+-- Create Worker table
+CREATE TABLE Worker (
+    WORKER_ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    FIRST_NAME CHAR(25),
+    LAST_NAME CHAR(25),
+    SALARY INT,
+    JOINING_DATE DATETIME,
+    DEPARTMENT CHAR(25)
+);
+
+-- Insert records into Worker table
+INSERT INTO Worker
+(WORKER_ID, FIRST_NAME, LAST_NAME, SALARY, JOINING_DATE, DEPARTMENT) VALUES
+(001, 'Monika', 'Arora', 100000, '2014-02-20 09:00:00', 'HR'),
+(002, 'Niharika', 'Verma', 80000, '2014-06-11 09:00:00', 'Admin'),
+(003, 'Vishal', 'Singhal', 300000, '2014-02-20 09:00:00', 'HR'),
+(004, 'Amitabh', 'Singh', 500000, '2014-02-20 09:00:00', 'Admin'),
+(005, 'Vivek', 'Bhati', 500000, '2014-06-11 09:00:00', 'Admin'),
+(006, 'Vipul', 'Diwan', 200000, '2014-06-11 09:00:00', 'Account'),
+(007, 'Satish', 'Kumar', 75000, '2014-01-20 09:00:00', 'Account'),
+(008, 'Geetika', 'Chauhan', 90000, '2014-04-11 09:00:00', 'Admin');
+
+-- Display Worker table
+SELECT * FROM Worker;
+
+-- Update worker name
+UPDATE Worker
+SET FIRST_NAME='Jayanth',
+    LAST_NAME='V'
+WHERE WORKER_ID=1;
+
+-- Increase salary of all workers
+UPDATE Worker
+SET SALARY = SALARY + 5000;
+
+-- Delete worker with ID 8
+DELETE FROM Worker
+WHERE WORKER_ID=8;
