@@ -1,0 +1,38 @@
+__Order by
+select*from worker;
+select first_name,department,salary from worker;
+where department = 'admin' order by salary asc;
+__Group by
+select count(worker_id) from worker where department = 'admin' or department = 'hr';
+select department, count(department) from worker
+group by department;
+
+select department, sum(salary) from worker group by department;
+
+__Having
+select department, sum(salary)
+from employee
+group by department
+having sum(salary) < 300000;
+__Q1)
+SELECT department, SUM(salary)
+FROM worker
+GROUP BY department
+ORDER BY SUM(salary) ASC
+LIMIT 2;
+
+__Q2)
+select first_name, department, salary from worker
+where department = 'admin' 
+order by salary desc limit 1 offset 1;
+
+__Q3)
+select first_name, department, salary
+from worker w1
+where salary = (
+    select distinct salary
+    from worker w2
+    where w1.department = w2.department
+    order by salary desc
+    limit 1 offset 1
+);
